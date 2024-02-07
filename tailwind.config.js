@@ -15,6 +15,7 @@ export default {
           500: "#1D2235"
         },
         blue: {
+          300: '#AED2FF',
           500: "#2b77e7"
         }
       },
