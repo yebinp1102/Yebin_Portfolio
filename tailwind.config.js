@@ -17,7 +17,9 @@ export default {
         blue: {
           300: '#AED2FF',
           500: "#2b77e7"
-        }
+        },
+        'main' : '#007bff',
+        "sub" : '#82a5ff'
       },
       fontFamily: {
         worksans: ["Work Sans", "sans-serif"],

@@ -17,6 +17,9 @@ ul, li{
   list-style: none;
 }
 
+.font-special{
+  font-family: "Truculenta", sans-serif;
+}
 
 @layer utilities {
   .blue-gradient_text {
