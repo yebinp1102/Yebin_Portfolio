@@ -31,3 +31,9 @@ ul, li{
   }
 
 }
+
+
+.bg_shape{
+  clip-path: polygon(57% 0%, 81% 21%, 100% 62%, 65% 99%, 5% 85%, 18% 30%);
+  border-radius: 100%;
+}

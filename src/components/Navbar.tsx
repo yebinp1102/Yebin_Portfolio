@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
   return (
-    <header className="header">
+    <header className="header border-b-white border">
       <NavLink to="/" className='w-14 h-14 rounded-lg  bg-white items-center justify-center flex font-bold shadow-md'>
         <p className="blue-gradient_text">Yebin</p>
       </NavLink>
