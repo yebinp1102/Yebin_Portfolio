@@ -19,7 +19,8 @@ export default {
           500: "#2b77e7"
         },
         'main' : '#007bff',
-        "sub" : '#82a5ff'
+        "sub" : '#82a5ff',
+        "point": '#ff9ff3'
       },
       fontFamily: {
         worksans: ["Work Sans", "sans-serif"],
