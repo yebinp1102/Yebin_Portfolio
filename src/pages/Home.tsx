@@ -6,9 +6,17 @@ import N from '../assets/images/N.svg'
 import profile from '../assets/images/profile.png';
 import dots from '../assets/images/dots-w.png';
 import brush from '../assets/images/brush.png';
+import arrow from '../assets/images/arrow.svg'
 import {easeIn, motion} from 'framer-motion';
+import { useState } from 'react';
 
 const Home = () => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const handleHover = () => {
+    setIsHovered(!isHovered)
+  }
+
   return (
     <section className="relative w-screen bg-black-500 overflow-hidden">
       
@@ -24,7 +32,8 @@ const Home = () => {
           whileInView={{opacity: 1, y: -10, rotate: -12}}
           transition={{ease: "backInOut",duration: 1, delay: 0.5}}
         />
-        <motion.img src={E} 
+        <motion.img 
+          src={E} 
           alt='E' 
           className='absolute w-[29vw] left-[16vw] -bottom-3' 
           initial={{opacity: 0, y: -800}}
@@ -79,13 +88,39 @@ const Home = () => {
           whileInView={{opacity: 1, x: 0}}
           transition={{ease: easeIn, duration: 0.75, delay: 4}}
         >
-          <p className='text-xl font-normal bg-point w-fit px-6 rounded-md py-0.5 mb-6'>Front-End Developer</p>
-          <h1 className='text-7xl font-black leading-[1.2]'>Hello, <br /> I am <span className='text-point'>Yebin Park.</span></h1>
-          <p className='mt-12 text-xl'>디자인과 기술의 조화를 항상 추구하는 창의적인 웹 개발자 입니다.</p>
+          <p className='text-xl font-normal bg-point w-fit px-6 rounded-md py-0.5 mb-8'>Front-End Developer</p>
+          <h1 className='text-7xl font-black leading-[1.2]'>Hello, <br /> I am <span className='text-point'>Yebin Park</span>.</h1>
+          <p className='mt-12 text-lg'>디자인과 기술의 조화를 항상 추구하는 창의적인 웹 개발자 입니다.</p>
           <p className='text-lg mt-2 leading-relaxed'>
             I am a creative web developer who always strives for <br/> the harmony between design and technology.
           </p>
-          <button className='w-fit border-2 border-point text-point bg-white px-8 py-1 font-bold text-xl mt-10'>더보기</button>
+
+          <div 
+            className={`
+              relative flex items-center justify-center w-[220px] h-[64px] 
+              mt-16 rounded-full shadow-lg border border-white/50 cursor-pointer
+              ${isHovered ? 'bg-pink-500' : 'bg-gradient-to-r from-point to-pink-500'}
+            `}
+          >
+            <div 
+              className="w-full absolute h-full"
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHover}
+            >
+              <button 
+                className={`
+                  absolute top-1.5 left-0 bg-white transition duration-300
+                  w-[50px] h-[50px] rounded-full text-slate-500
+                  flex items-center justify-center
+                  ${!isHovered? 'translate-x-1.5' : ' translate-x-[162px]'}
+                `}
+              >
+                <img src={arrow} alt='arrow' className={`relative w-[26px] brightness-110 ${!isHovered ? 'rotate-180' : 'rotate-0'}`} />
+              </button>
+            </div>
+            <p className='font-bold text-xl'>{isHovered? 'See More' : '더보기'}</p>
+          </div>
+        
         </motion.div>
         
         {/* images */}

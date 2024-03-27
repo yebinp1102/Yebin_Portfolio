@@ -5,8 +5,9 @@ import Home from './pages/Home'
 const App = () => {
 
   return (
-    <main className='bg-blue-300/80'>
+    <main>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={'About'} />
