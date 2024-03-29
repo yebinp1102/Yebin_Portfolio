@@ -1,7 +1,13 @@
 
-const Projects = () => {
+type Props = {
+  projectsRef: React.RefObject<HTMLDivElement>
+}
+
+const Projects = ({projectsRef}: Props) => {
   return (
-    <div>Projects</div>
+    <section ref={projectsRef} className="w-full h-screen">
+      project
+    </section>
   )
 }
 

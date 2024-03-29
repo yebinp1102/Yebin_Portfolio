@@ -5,7 +5,7 @@ type Props = {
   percentage: string
 }
 
-const Skill = ({skill, icon, percentage}: Props) => {
+const SkillList = ({skill, icon, percentage}: Props) => {
   return (
     <li className='flex flex-col w-full mb-6'>
 
@@ -27,4 +27,4 @@ const Skill = ({skill, icon, percentage}: Props) => {
   )
 }
 
-export default Skill
+export default SkillList

@@ -2,14 +2,19 @@ import { Link } from "react-router-dom";
 import Github from "../assets/logos/github.svg";
 import Notion from '../assets/logos/notion.svg';
 import profile from "../assets/images/profile.png";
-import SkillWrap from "../components/SkillWrap";
 import HoverButton from "../components/HoverButton";
 import AboutText from "../components/AboutText";
+import React from "react";
 
-const About = () => {
+type Props = {
+  aboutRef: React.RefObject<HTMLDivElement>
+}
+
+const About = ({aboutRef}: Props) => {
   const buttonStyle = 'border border-point bg-white flex items-center gap-2 rounded-full shadow-md p-2'
+  
   return (
-    <div className="w-full h-screen bg-white flex items-center justify-center py-24">
+    <section ref={aboutRef} className="w-full bg-white flex items-center justify-center py-24">
       <div className="w-full max-w-6xl h-full mx-auto flex gap-8 flex-col text-lg">
         {/* info thumbnail  */}
         <div className="flex items-center gap-12">
@@ -50,22 +55,8 @@ const About = () => {
           </div>
         </div>
 
-        {/* Skills */}
-        <div className="flex gap-7 border-2 border-main relative p-8 rounded-lg">
-          <h1
-            className="text-sub font-bold border-l-2 border-sub pl-6 text-5xl text-center tracking-widest"
-            style={{
-              writingMode: "vertical-lr",
-              rotate: "180deg",
-            }}
-          >
-            — My Skills
-          </h1>
-          <SkillWrap />
-        </div>
-
       </div>
-    </div>
+    </section>
   );
 };
 
