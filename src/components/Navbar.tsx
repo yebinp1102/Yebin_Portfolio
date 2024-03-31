@@ -70,27 +70,6 @@ const Navbar = ({
     },
   ];
 
-  const Menu = () => {
-    return (
-      <>
-        {buttons.map((button) => (
-          <div
-            onMouseEnter={() => button.stateFnc(true)}
-            onMouseLeave={() => button.stateFnc(false)}
-            onClick={() => scrollToSection(button.ref)}
-            className="bg-point hover:bg-pink-500 cursor-pointer rounded-full border border-white shadow-lg w-[50px] h-[50px] p-2 hover:scale-110 transition flex items-center justify-center"
-          >
-            {button.state ? (
-              <p className="text-white text-xs font-semibold">{button.text}</p>
-            ) : (
-              <img src={button.icon} className="w-[90%] object-cover" />
-            )}
-          </div>
-        ))}
-      </>
-    );
-  };
-
   useEffect(() => {
     setTimeout(() => setShowMenu(true), 5000);
   }, []);
