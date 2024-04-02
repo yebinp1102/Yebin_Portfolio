@@ -1,4 +1,3 @@
-import Github from '../assets/logos/git.svg';
 
 type Props = {
   image: string;
@@ -27,17 +26,18 @@ const Project = ({image} : Props) => {
           자투리 시간에 전자기기에 집착하는 아이들이 시간을 좀 더 유의미하게 쓸 순 없을까?"라는 고민에서 탄생한 프로젝트.
           3D 모델을 직접 움직이며 재밌으면서 생산적인 경험을 할 수 있는 3D 템플릿을 판매하는 웹사이트.</p>
 
-        <ul className="flex flex-col gap-1.5 text-slate-600 mt-4">
-          <a target='_blank' href='https://github.com/yebinp1102'>배포 링크 : https://github.com/yebinp1102</a>
-          <a target='_blank' href='https://github.com/yebinp1102/3D-storybook'>깃헙 링크 : https://github.com/yebinp1102/3D-storybook</a>
-        </ul>
-
         {/* tags */}
-        <ul className='flex gap-2 text-white flex-wrap font-semibold'>
+        <ul className='flex gap-2 text-sm text-white flex-wrap font-semibold'>
           <li className={`bg-point ${tagStyle}`}>React</li>
           <li className={`bg-sub ${tagStyle}`}>Typescript</li>
           <li className={`bg-emerald-400 ${tagStyle}`}>Node.js</li>
           <li className={`bg-orange-300 ${tagStyle}`}>MongoDB</li>
+        </ul>
+
+        <ul className="flex flex-col gap-1.5 text-slate-600">
+          <a target='_blank' href='https://github.com/yebinp1102'>배포 링크 : https://github.com/yebinp1102</a>
+          <a target='_blank' href='https://github.com/yebinp1102/3D-storybook'>깃헙 링크 : https://github.com/yebinp1102/3D-storybook</a>
+          <a target='_blank' href='https://github.com/yebinp1102/3D-storybook'>Notion 링크 : https://github.com/yebinp1102/3D-storybook</a>
         </ul>
 
       </div>
