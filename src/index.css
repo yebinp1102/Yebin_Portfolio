@@ -42,3 +42,12 @@ input:focus {
   clip-path: polygon(57% 0%, 81% 21%, 100% 62%, 65% 99%, 5% 85%, 18% 30%);
   border-radius: 100%;
 }
+
+.triangle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 90px 70px 90px;
+  border-color: transparent transparent #83b6e1 transparent;
+  transform: rotate(180deg);
+}

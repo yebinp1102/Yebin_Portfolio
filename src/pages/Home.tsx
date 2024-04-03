@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Projects from './Projects';
 import Skills from './Skills';
 import Contact from './Contact';
+import Footer from './Footer';
 
 const Home = () => {
   const bannerRef = useRef<HTMLDivElement>(null!);
@@ -34,6 +35,7 @@ const Home = () => {
       <Skills skillsRef={skillsRef} />
       <Projects projectsRef={projectsRef}  />
       <Contact  contactRef={contactRef} />
+      <Footer />
     </section>
   )
 }
