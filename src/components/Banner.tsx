@@ -9,11 +9,15 @@ import brush from "../assets/images/brush.png";
 import { easeIn, motion } from "framer-motion";
 import HoverButton from "./HoverButton";
 
+type ScrollToSectionType = (ref: React.RefObject<HTMLDivElement>) => void;
+
 type Props = {
-  bannerRef: React.RefObject<HTMLDivElement>
+  bannerRef: React.RefObject<HTMLDivElement>,
+  aboutRef: React.RefObject<HTMLDivElement>,
+  scrollToSection: ScrollToSectionType
 }
 
-const Banner = ({bannerRef}: Props) => {
+const Banner = ({bannerRef, aboutRef, scrollToSection}: Props) => {
 
   return (
     <section ref={bannerRef} className="w-full relative h-screen bg-sub bg-gradient-to-b from-white to-main/95">
@@ -88,14 +92,11 @@ const Banner = ({bannerRef}: Props) => {
             Hello, <br /> I am <span className="text-point">Yebin Park</span>.
           </h1>
           <p className="mt-12 text-lg">
-            디자인과 기술의 조화를 항상 추구하는 창의적인 웹 개발자 입니다.
+            겁 없이 도전적이고 진취적인 프론트엔드 개발자 박예빈 입니다.
           </p>
           <p className="text-lg mt-2 leading-relaxed mb-14">
-            I am a creative web developer who always strives for <br /> the
-            harmony between design and technology.
+          an ambitious, fearless and proactive frontend developer
           </p>
-
-          <HoverButton text={'둘러보기'} hoverText={"See More"} />
         </motion.div>
 
         {/* images */}
