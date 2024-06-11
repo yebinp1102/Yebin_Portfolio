@@ -1,18 +1,39 @@
 
 type Props = {
-  image: string;
+  type: string,
+  title: string,
+  image: string,
+  desc: string,
+  skills: String[],
+  deploy: string,
+  github: string
 }
 
-const Project = ({image} : Props) => {
+const Project = ({type, title, image, desc, skills, deploy, github} : Props) => {
   const tagStyle = 'px-4 rounded-[4px] py-[1px]';
+  const skillsBgColor = (idx: number) => {
+    if(idx % 6 === 0){
+      return 'bg-point'
+    }else if (idx % 6 === 1){
+      return 'bg-sub'
+    }else if (idx % 6 === 2){
+      return 'bg-emerald-400'
+    }else if (idx % 6 === 3){
+      return 'bg-orange-300'
+    } else if (idx % 6 === 4){
+      return 'bg-violet-400'
+    } else if (idx % 6 === 5){
+      return 'bg-rose-400'
+    }
+  }
   return (
     <div className="w-full ">
-      
+      <p className={`${type === '개인' ? 'text-main' : 'text-pink-400'} font-semibold text-2xl mb-4`}>[{type}]</p> 
       {/* image */}
-      <div className=" relative bg-sub border p-2 rounded-lg hover:scale-105 transition cursor-pointer">
-        <img src={image} alt="project_thumb" className="h-full min-h-[250px] object-cover rounded-lg" />
-        <div className="bg-sub rounded-tl-3xl rounded-br-xl absolute bottom-0 right-0 w-16 h-16 flex items-center justify-center">
-          <div className='bottom-0 right-0 bg-white w-12 h-12 rounded-tl-2xl rounded-br-md flex items-center justify-center text-2xl text-blue-700'>
+      <div className={`relative ${type === '개인' ? 'bg-main' : 'bg-pink-400'} border p-2 rounded-lg hover:scale-105 transition cursor-pointer`}>
+        <img src={image} alt="project_thumb" className="w-full h-full min-h-[250px] max-h-[250px] object-cover rounded-lg" />
+        <div className={`${type === '개인' ? 'bg-main' : 'bg-pink-400'} rounded-tl-3xl rounded-br-xl absolute bottom-0 right-0 w-16 h-16 flex items-center justify-center`}>
+          <div className={`bottom-0 right-0 bg-white w-12 h-12 rounded-tl-2xl rounded-br-md flex items-center justify-center text-2xl ${type === '개인' ? 'text-blue-700' : 'text-pink-500'}`}>
             &#8598;
           </div>
         </div>
@@ -21,23 +42,21 @@ const Project = ({image} : Props) => {
 
       {/* text & links */}
       <div className="flex flex-col gap-5 mt-4 px-2 text-sm text-slate-500">
-        <h3 className="font-bold text-2xl text-slate-800">3D 템플릿 판매 쇼핑몰 : Sparkle Tale</h3>
+        <h3 className="font-bold text-xl text-slate-800">
+          {title}</h3>
         <p className="">
-          자투리 시간에 전자기기에 집착하는 아이들이 시간을 좀 더 유의미하게 쓸 순 없을까?"라는 고민에서 탄생한 프로젝트.
-          3D 모델을 직접 움직이며 재밌으면서 생산적인 경험을 할 수 있는 3D 템플릿을 판매하는 웹사이트.</p>
+          {desc}</p>
 
         {/* tags */}
         <ul className='flex gap-2 text-sm text-white flex-wrap font-semibold'>
-          <li className={`bg-point ${tagStyle}`}>React</li>
-          <li className={`bg-sub ${tagStyle}`}>Typescript</li>
-          <li className={`bg-emerald-400 ${tagStyle}`}>Node.js</li>
-          <li className={`bg-orange-300 ${tagStyle}`}>MongoDB</li>
+          {skills.map((skill, idx) => (
+            <li className={`${tagStyle} ${skillsBgColor(idx)}`}>{skill}</li>
+          ))}
         </ul>
 
         <ul className="flex flex-col gap-1.5 text-slate-600">
-          <a target='_blank' href='https://github.com/yebinp1102'>배포 링크 : https://github.com/yebinp1102</a>
-          <a target='_blank' href='https://github.com/yebinp1102/3D-storybook'>깃헙 링크 : https://github.com/yebinp1102/3D-storybook</a>
-          <a target='_blank' href='https://github.com/yebinp1102/3D-storybook'>Notion 링크 : https://github.com/yebinp1102/3D-storybook</a>
+          <a target='_blank' href={deploy}>배포 링크 : {deploy}</a>
+          <a target='_blank' href={github}>깃헙 링크 : {github}</a>
         </ul>
 
       </div>

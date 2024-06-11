@@ -1,17 +1,22 @@
 import { useState } from "react";
 import Arrow from "../assets/images/arrow.svg";
 
+type ScrollToSectionType = (ref: React.RefObject<HTMLDivElement>) => void;
+
 type Props = {
   text: string;
   hoverText: string;
+  ref: React.RefObject<HTMLDivElement>,
+  scrollToSection: ScrollToSectionType
 };
 
-const HoverButton = ({ text, hoverText }: Props) => {
+const HoverButton = ({ text, hoverText, ref, scrollToSection }: Props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const handleHover = () => {
     setIsHovered(!isHovered);
   };
+  console.log(ref);
 
   return (
     <div
@@ -20,6 +25,7 @@ const HoverButton = ({ text, hoverText }: Props) => {
         rounded-full shadow-lg border border-white/50 cursor-pointer
         ${isHovered ? "bg-pink-500" : "bg-gradient-to-r from-point to-pink-500"}
       `}
+      onClick={()=> scrollToSection(ref)}
     >
       <div
         className="w-full absolute h-full"

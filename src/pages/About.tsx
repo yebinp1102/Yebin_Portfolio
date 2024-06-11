@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import Github from "../assets/logos/github.svg";
 import Notion from "../assets/logos/notion.svg";
-import profile from "../assets/images/profile.png";
-import HoverButton from "../components/HoverButton";
+import profile from "../assets/images/resume_profile.jpg";
 import AboutText from "../components/AboutText";
 import React from "react";
 import Education from "../assets/images/graduation.png";
@@ -21,7 +20,7 @@ const About = ({ aboutRef }: Props) => {
   return (
     <section
       ref={aboutRef}
-      className="w-full flex items-center justify-center py-32"
+      className="w-full flex items-center justify-center py-16"
     >
       <div className="w-full max-w-6xl h-full mx-auto flex gap-8 flex-col text-lg">
         {/* info thumbnail  */}
@@ -35,20 +34,16 @@ const About = ({ aboutRef }: Props) => {
         <div className="flex gap-10">
 
           <div className="flex flex-col justify-evenly">
-            <div className="relative w-[400px] h-[550px] bg-slate-700">
+            <div className="w-[400px] h-[500px] bg-sub flex items-center justify-center p-1">
               <img
                 src={profile}
                 alt="profile"
-                className="w-[95%] h-[full] object-cover absolute bottom-0"
+                className="w-[95%] h-[95%] object-cover"
               />
             </div>
 
             {/* link buttons */}
             <div className="flex gap-2 items-center mt-10 mx-auto">
-              <HoverButton
-                text={"프로젝트 보러가기"}
-                hoverText={"See Projects"}
-              />
               <Link
                 to="https://github.com/yebinp1102?tab=overview&from=2024-01-01&to=2024-12-09"
                 className={`${buttonStyle}`}
@@ -66,9 +61,8 @@ const About = ({ aboutRef }: Props) => {
             </div>
           </div>
 
-          <div className="flex flex-col flex-1 p-4">
+          <div className="flex flex-col flex-1 p-4 pt-0">
             <ul className="flex flex-col gap-3 mb-4 px-3">
-              <AboutText title="이름" text="박예빈" />
               <AboutText title="지원 직무" text="신입 프론트엔드 개발자" />
               <AboutText
                 title="자기소개"

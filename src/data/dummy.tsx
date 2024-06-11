@@ -4,7 +4,6 @@ import ReactIcon from '../assets/logos/react-icon.svg';
 import TailWindIcon from '../assets/logos/tailwind-css.svg';
 import ReduxIcon from '../assets/logos/redux.svg';
 import ReactQueryIcon from '../assets/logos/react-query.svg';
-import SassIcon from '../assets/logos/sass.svg';
 import GitIcon from '../assets/logos/git.svg';
 import NotionIcon from '../assets/logos/notion.svg';
 import MongoDBIcon from '../assets/logos/mongo-db.png';
@@ -48,12 +47,7 @@ export const skills = [
         skillName: 'React-Query',
         icon: ReactQueryIcon,
         percentage: '75%'
-      },
-      {
-        skillName: 'Sass',
-        icon: SassIcon,
-        percentage: '60%'
-      },
+      }
     ]
   },
   {

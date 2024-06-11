@@ -2,8 +2,8 @@ import { useRef } from 'react';
 import Banner from '../components/Banner';
 import About from './About';
 import Navbar from '../components/Navbar';
-import Projects from './Projects';
 import Skills from './Skills';
+import Projects from './Projects';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -20,6 +20,7 @@ const Home = () => {
       ref.current.scrollIntoView( {behavior: 'smooth'} );
     }
   }
+  
   return (
     <section className="relative w-screen overflow-hidden flex flex-col">
       <Navbar 
@@ -30,7 +31,7 @@ const Home = () => {
         projectsRef={projectsRef}
         contactRef={contactRef}
       />
-      <Banner bannerRef={bannerRef} />
+      <Banner bannerRef={bannerRef} aboutRef={aboutRef} scrollToSection={scrollToSection} />
       <About aboutRef={aboutRef} />
       <Skills skillsRef={skillsRef} />
       <Projects projectsRef={projectsRef}  />
