@@ -7,44 +7,40 @@ import profile from "../assets/images/profile.png";
 import dots from "../assets/images/dots-w.png";
 import brush from "../assets/images/brush.png";
 import { easeIn, motion } from "framer-motion";
-import HoverButton from "./HoverButton";
 
-type ScrollToSectionType = (ref: React.RefObject<HTMLDivElement>) => void;
 
 type Props = {
-  bannerRef: React.RefObject<HTMLDivElement>,
-  aboutRef: React.RefObject<HTMLDivElement>,
-  scrollToSection: ScrollToSectionType
+  bannerRef: React.RefObject<HTMLDivElement>
 }
 
-const Banner = ({bannerRef, aboutRef, scrollToSection}: Props) => {
+const Banner = ({bannerRef}: Props) => {
 
   return (
     <section ref={bannerRef} className="w-full relative h-screen bg-sub bg-gradient-to-b from-white to-main/95">
       {/* drop alphabet effects */}
-      <div className="absolute w-full h-full">
+      <div className="absolute w-full h-full z-1">
         <motion.img
           src={Y}
           alt="Y"
           className="absolute w-[29vw] -left-12 -bottom-6 -rotate-12"
           initial={{ opacity: 0, y: -800 }}
-          whileInView={{ opacity: 1, y: -10, rotate: -12 }}
-          transition={{ ease: "backInOut", duration: 1, delay: 0.5 }}
+          animate={{ opacity: 1, y: -10, rotate: -12 }}
+          transition={{ ease: "backInOut", duration: 1, delay: 0 }}
         />
         <motion.img
           src={E}
           alt="E"
           className="absolute w-[29vw] left-[16vw] -bottom-3"
           initial={{ opacity: 0, y: -800 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "backInOut", duration: 1, delay: 0.8 }}
         />
         <motion.img
           src={B}
           alt="B"
-          className="absolute w-[29vw] left-[37vw] -bottom-8 rotate-12"
+          className="absolute w-[29vw] left-[37vw] -bottom-6 rotate-12"
           initial={{ opacity: 0, y: -800 }}
-          whileInView={{ opacity: 1, y: -10, rotate: 12 }}
+          animate={{ opacity: 1, y: -8, rotate: 12 }}
           transition={{ ease: "backInOut", duration: 1, delay: 1 }}
         />
         <motion.img
@@ -52,7 +48,7 @@ const Banner = ({bannerRef, aboutRef, scrollToSection}: Props) => {
           alt="I"
           className="absolute w-[29vw] left-[54vw] -bottom-3"
           initial={{ opacity: 0, y: -800 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "backInOut", duration: 1, delay: 0.75 }}
         />
         <motion.img
@@ -60,15 +56,15 @@ const Banner = ({bannerRef, aboutRef, scrollToSection}: Props) => {
           alt="N"
           className="absolute w-[29vw] left-[74vw] bottom-0 -rotate-12"
           initial={{ opacity: 0, y: -800 }}
-          whileInView={{ opacity: 1, y: -10, rotate: -12 }}
+          animate={{ opacity: 1, y: -10, rotate: -12 }}
           transition={{ ease: "backInOut", duration: 1, delay: 1.5 }}
         />
       </div>
 
       <motion.div
-        className="absolute bg-main rounded-br-full"
+        className="absolute bg-main rounded-br-full z-3"
         initial={{ width: "0", height: "0" }}
-        whileInView={{ width: "100vw", height: "100vh", borderRadius: 0 }}
+        animate={{ width: "100vw", height: "100vh", borderRadius: 0 }}
         transition={{ ease: "backIn", duration: 1.5, delay: 2 }}
       />
 
@@ -92,7 +88,9 @@ const Banner = ({bannerRef, aboutRef, scrollToSection}: Props) => {
             Hello, <br /> I am <span className="text-point">Yebin Park</span>.
           </h1>
           <p className="mt-12 text-lg">
-            겁 없이 도전적이고 진취적인 프론트엔드 개발자 박예빈 입니다.
+            <span className='text-point font-bold'>도전적</span>이고 
+            <span className='text-point font-bold'> 진취적</span>인
+            프론트엔드 개발자 박예빈 입니다.
           </p>
           <p className="text-lg mt-2 leading-relaxed mb-14">
           an ambitious, fearless and proactive frontend developer

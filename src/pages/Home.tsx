@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar';
 import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
-import Footer from './Footer';
 
 const Home = () => {
   const bannerRef = useRef<HTMLDivElement>(null!);
@@ -31,12 +30,11 @@ const Home = () => {
         projectsRef={projectsRef}
         contactRef={contactRef}
       />
-      <Banner bannerRef={bannerRef} aboutRef={aboutRef} scrollToSection={scrollToSection} />
+      <Banner bannerRef={bannerRef} />
       <About aboutRef={aboutRef} />
       <Skills skillsRef={skillsRef} />
       <Projects projectsRef={projectsRef}  />
       <Contact  contactRef={contactRef} />
-      <Footer />
     </section>
   )
 }

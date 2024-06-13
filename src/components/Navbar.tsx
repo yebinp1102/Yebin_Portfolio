@@ -71,7 +71,7 @@ const Navbar = ({
   ];
 
   useEffect(() => {
-    setTimeout(() => setShowMenu(true), 5000);
+    setTimeout(() => setShowMenu(true), 6500);
   }, []);
 
   return (
